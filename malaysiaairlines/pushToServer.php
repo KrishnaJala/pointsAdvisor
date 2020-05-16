@@ -8,6 +8,7 @@
 
 $dataArray = $_POST['dataArray'];
 $des = $_POST['des'];
+$ori = $_POST['ori'];
 
 $servername = "127.0.0.1";
 $username = "root";
@@ -36,7 +37,7 @@ foreach ($json as $key => $val) {
                 $num = $query->num_rows;
                 if($num == 0) {
                     $sql = "INSERT INTO pointsData (origin, destination, planType, miles, cabinClass, created_on)
-VALUES ('KUL', '$des', '$key2', $miles,'$cabinClass'," . time() . ")";
+VALUES ('$ori', '$des', '$key2', $miles,'$cabinClass'," . time() . ")";
 
                     if ($conn->query($sql) === TRUE) {
                         $result = true;
@@ -45,7 +46,7 @@ VALUES ('KUL', '$des', '$key2', $miles,'$cabinClass'," . time() . ")";
                         return false;
                     }
                 }else{
-                    $sql = "UPDATE pointsData SET miles=$miles, updated_on=".time()." WHERE destination='$des' AND planType ='$key2' AND cabinClass ='$cabinClass'";
+                    $sql = "UPDATE pointsData SET miles=$miles, updated_on=".time()." WHERE origin='$ori' AND destination='$des' AND planType ='$key2' AND cabinClass ='$cabinClass'";
                     if ($conn->query($sql) === TRUE) {
                         $result = true;
                     } else {

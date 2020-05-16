@@ -36,7 +36,8 @@ foreach ($result as $eachResult) { ?>
                     'des': '<?php echo $eachResult['des']; ?>'
                 },
                 success: function (data) {
-                    saveToList(data,'<?php echo $eachResult['ori']; ?>','<?php echo $eachResult['des']; ?>');
+                    if (data.milesList[0].Platinum.length > 0)
+                        saveToList(data, '<?php echo $eachResult['ori']; ?>', '<?php echo $eachResult['des']; ?>');
                 },
                 error: function (request, error) {
                     console.log("Request: " + JSON.stringify(request));
