@@ -8,7 +8,7 @@
     <meta name="author" content=""/>
     <title>Points Advisor - Admin</title>
     <!--favicon-->
-    <link rel="icon" href="./source/images/livon_64.png" type="image/x-icon">
+    <!--<link rel="icon" href="./source/images/livon_64.png" type="image/x-icon">-->
     <!-- simplebar CSS-->
     <link href="./source/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
     <!-- Bootstrap core CSS-->
@@ -18,10 +18,8 @@
     <!--Morris CSS -->
     <link href="./source/plugins/morris/css/morris.css" rel="stylesheet">
     <!--Data Tables -->
-    <link href="./source/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css"
-          rel="stylesheet" type="text/css">
-    <link href="./source/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css"
-          rel="stylesheet" type="text/css">
+    <link href="./source/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    <link href="./source/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">
     <!-- Icons CSS-->
     <link href="./source/css/icons.css" rel="stylesheet" type="text/css"/>
     <!-- Sidebar CSS-->
@@ -82,7 +80,7 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="sidebar-submenu">
-                    <li><a href="malaysia.php"><i class="fa fa-arrow-right"></i>Malaysia</a></li>
+                    <li><a href="malaysia-view.php"><i class="fa fa-arrow-right"></i>Malaysia</a></li>
                     <li><a href="singapore.php"><i class="fa fa-arrow-right"></i>Singapore</a></li>
                 </ul>
             </li>

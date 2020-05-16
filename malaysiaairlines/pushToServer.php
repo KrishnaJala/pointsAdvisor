@@ -33,7 +33,7 @@ foreach ($json as $key => $val) {
                 $miles = $val3['miles'];
                 $cabinClass = $val3['cabinClass'];
 
-                $query = $conn->query("SELECT * FROM malaysia_data WHERE destination = '$des' AND planType ='$key2' AND cabinClass ='$cabinClass'");
+                $query = $conn->query("SELECT * FROM malaysia_data WHERE origin = '$ori' AND destination = '$des' AND planType ='$key2' AND cabinClass ='$cabinClass'");
                 $num = $query->num_rows;
                 if($num == 0) {
                     $sql = "INSERT INTO malaysia_data (origin, destination, planType, miles, cabinClass, created_on)

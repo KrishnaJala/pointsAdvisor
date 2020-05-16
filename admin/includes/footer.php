@@ -52,7 +52,7 @@
 <script>
     function changePassword(){
         var formData = $("#change-password-form-id").serialize();
-        var base_url = '<?php echo base_url(); ?>';
+
         $.ajax({
             type: 'POST' ,
             url: base_url+'index.php/admin/changePassword',

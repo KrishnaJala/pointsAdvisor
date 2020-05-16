@@ -31,13 +31,14 @@ foreach ($data as $eachData) {
     $airline = 'malaysiaairlines';
     $programme_slug = 'malaysiaairlines';
     $data = serialize(array('trip_type' => $eachData['planType'], 'class' => $eachData['cabinClass'], 'points' => $eachData['miles'], 'level' => 'NA'));
-    $query = "SELECT * FROM new_routes WHERE origin='$origin' AND destination='$destination' AND airline_slug='$airline'";
+
+    $query = "SELECT * FROM routes WHERE origin='$origin' AND destination='$destination' AND airline_slug='$airline'";
     $query = $conn->query($query);
     $num = $query->num_rows;
     if ($num == 0) {
-        $conn->query("INSERT INTO new_routes (origin,destination,programme_slug,airline_slug,data,created_at) VALUES ('$origin','$destination','$programme_slug','$airline','$data',NOW())");
+        $conn->query("INSERT INTO routes (origin,destination,programme_slug,airline_slug,data,created_at) VALUES ('$origin','$destination','$programme_slug','$airline','$data',NOW())");
     } else {
-        $conn->query("UPDATE new_routes SET data='$data',updated_at=NOW() WHERE origin='$origin' AND destination='$destination' AND programme_slug='$programme_slug' AND airline_slug='$airline'");
+        $conn->query("UPDATE routes SET data='$data',updated_at=NOW() WHERE origin='$origin' AND destination='$destination' AND programme_slug='$programme_slug' AND airline_slug='$airline'");
     }
 }
 
