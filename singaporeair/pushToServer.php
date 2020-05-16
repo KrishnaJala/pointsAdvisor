@@ -32,10 +32,10 @@ foreach ($json as $key => $val) {
                 $miles = $val3['miles'];
                 $cabinClass = $val3['cabinClass'];
 
-                $query = $conn->query("SELECT * FROM pointsData WHERE destination = '$des' AND planType ='$key2' AND cabinClass ='$cabinClass'");
+                $query = $conn->query("SELECT * FROM malaysia_data WHERE destination = '$des' AND planType ='$key2' AND cabinClass ='$cabinClass'");
                 $num = $query->num_rows;
                 if($num == 0) {
-                    $sql = "INSERT INTO pointsData (origin, destination, planType, miles, cabinClass, created_on)
+                    $sql = "INSERT INTO malaysia_data (origin, destination, planType, miles, cabinClass, created_on)
 VALUES ('KUL', '$des', '$key2', $miles,'$cabinClass'," . time() . ")";
 
                     if ($conn->query($sql) === TRUE) {
@@ -45,7 +45,7 @@ VALUES ('KUL', '$des', '$key2', $miles,'$cabinClass'," . time() . ")";
                         return false;
                     }
                 }else{
-                    $sql = "UPDATE pointsData SET miles=$miles, updated_on=".time()." WHERE destination='$des' AND planType ='$key2' AND cabinClass ='$cabinClass'";
+                    $sql = "UPDATE malaysia_data SET miles=$miles, updated_on=".time()." WHERE destination='$des' AND planType ='$key2' AND cabinClass ='$cabinClass'";
                     if ($conn->query($sql) === TRUE) {
                         $result = true;
                     } else {
